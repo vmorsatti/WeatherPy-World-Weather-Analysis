@@ -1,6 +1,7 @@
 
 # WeatherPy - World Weather Analysis
 Produced by Verna Orsatti
+June 25,2018
 
 # Analysis
 
@@ -34,15 +35,6 @@ Also, to randomly select from known cities from an aggregate database would elim
 For this assigment, the method required to use was utilizing the randomly selected coordinates to find a city nearby through citipy.  Data from those cities was then collected through OpenWeatherMaps, and plotted into 4 graphs of selected data, plotted against latitude values in a scatterplot.
 
 
-
-```python
-For the production of the results, the manner in which the data is generated leaves room for interpretation.  A better representation of points on the included figures for locations of data collected would be to create bins for latitude range, and randomly select citiy data to fill those bins as equally as possible to eliminate the quantity factor of the number of cities in a latitude range that can affect the perceived result.  With a bin method of collecting data , analyzing vertical columns of data over the x axis of latitudes on the graphs are likely to show clearer trends. 
-
-Also, to randomly select from known cities from an aggregate database would eliminate false connections between randomly created coordinates and locations of cities - a problem in this method that chooses a city based on coordinates that may fall anywhere on water or on land that may not be in a reasonably close are to the city provided by enclosed data method.  Openweathermap does provide a data file of over 200,000 cities in which a randome list could be created per latitude range.
-
-For this assigment, the method required to use was utilizing the randomly selected coordinates to find a city nearby through citipy.  Data from those cities was then collected through OpenWeatherMaps, and plotted into 4 graphs of selected data, plotted against latitude values in a scatterplot.
-```
-
 # Main Code & Table of Data
 
 
@@ -67,6 +59,9 @@ api_key = "your code here"
 
 # Incorporated citipy to determine city based on latitude and longitude
 from citipy import citipy
+
+# Create figures using seaborn and matplotlib
+sns.set()
 
 # Output File (CSV)
 output_data_file = "output_data_cities.csv"
@@ -1674,11 +1669,7 @@ cities_df.shape
 cities_df.to_csv(output_data_file) 
 ```
 
-
-```python
-# Create figures using seaborn and matplotlib
-sns.set()
-```
+# Temperature vs Latitude Plot
 
 
 ```python
@@ -1697,8 +1688,10 @@ plt.show()
 ```
 
 
-![png](output_14_0.png)
+![png](output_13_0.png)
 
+
+# Humidity vs Latitude Plot
 
 
 ```python
@@ -1720,6 +1713,8 @@ plt.show()
 ![png](output_15_0.png)
 
 
+# Cloudiness vs Latitude Plot
+
 
 ```python
 # Latitude vs. Cloudiness Plot
@@ -1737,8 +1732,10 @@ plt.show()
 ```
 
 
-![png](output_16_0.png)
+![png](output_17_0.png)
 
+
+# Wind Speed vs Latitude Plot
 
 
 ```python
@@ -1757,7 +1754,7 @@ plt.show()
 ```
 
 
-![png](output_17_0.png)
+![png](output_19_0.png)
 
 
 
